@@ -14,6 +14,7 @@
   <body>
     <a-scene>
       <a-assets>
+        <img id="sky" src="sky.jpg">
         <script id="boxes" type="text/x-nunjucks-template">
           {% for i in range(0, 250) %}
             <a-entity geometry="primitive: torus; radius: 0.5; radiusTubular: 0.1"
@@ -26,16 +27,15 @@
       </a-assets>
 
       <a-entity>
-        <a-entity position="10 10 10" template="src: #boxes">
-        </a-entity>
-        <a-animation attribute="rotation" easing="linear" to="360 360 360"
-                     dur="72000" repeat="indefinite"></a-animation>
+        <a-entity position="10 10 10" template="src: #boxes"></a-entity>
+        <a-animation attribute="rotation" dur="512000" repeat="indefinite" to="0 360 0"
+                     easing="linear"></a-animation>
       </a-entity>
 
       <a-camera position="0 1.8 2" mouse-cursor></a-camera>
-      <a-light type="ambient" color="#222"></a-light>
-      <a-light type="directional" color="#666" position="-1 1 0"></a-light>
-      <a-sky color="#555" src="assets/sky.jpg"></a-sky>
+      <a-light type="ambient" color="#111"></a-light>
+      <a-light type="directional" color="#666" position="0 0 -1"></a-light>
+      <a-sky src="#sky"></a-sky>
     </a-scene>
   </body>
 </html>

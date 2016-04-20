@@ -5,7 +5,7 @@ AFRAME.registerComponent('hover-bright', {
       el.setAttribute('material', 'shader', 'flat');
       el.setAttribute('light', {
         color: el.getAttribute('random-color'),
-        intensity: 0.9,
+        intensity: 0.7,
         type: 'point'
       });
     });
